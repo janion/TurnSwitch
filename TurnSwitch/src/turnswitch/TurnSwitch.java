@@ -17,15 +17,15 @@ public class TurnSwitch {
 		
 		model = new TurnSwitchModel();
 
-		pane.setTop(createLabel(CabDirectionSwitchPosition.ON, -90));
-		pane.setRight(createLabel(CabDirectionSwitchPosition.OFF, 0));
-		pane.setBottom(createLabel(CabDirectionSwitchPosition.REVERSE, 90));
+		pane.setTop(createLabel(CabDirectionSwitchPosition.ON));
+		pane.setRight(createLabel(CabDirectionSwitchPosition.OFF));
+		pane.setBottom(createLabel(CabDirectionSwitchPosition.REVERSE));
 		
 		model.getObserverManager().addObserver(TurnSwitchModel.POSITION_CHANGED,
 				position -> knob.setRotation(position.getAngle()));
 	}
 	
-	private Label createLabel(CabDirectionSwitchPosition position, double positionAngle) {
+	private Label createLabel(CabDirectionSwitchPosition position) {
 		Label label = new Label(position.getText());
 		BorderPane.setAlignment(label, Pos.CENTER);
 		label.setOnMouseClicked(event -> model.setCurrentPosition(position));

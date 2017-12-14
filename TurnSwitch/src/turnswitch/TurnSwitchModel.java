@@ -7,20 +7,20 @@ import observable.ObserverType;
 
 public class TurnSwitchModel implements Observable {
 	
-	public static final ObserverType<CabDirectionSwitchPosition> POSITION_CHANGED = new ObserverType<>();
+	public static final ObserverType<TurnSwitchPosition> POSITION_CHANGED = new ObserverType<>();
 	
 	private ObserverManager observerManager;
-	private CabDirectionSwitchPosition currentPosition;
+	private TurnSwitchPosition currentPosition;
 	
 	public TurnSwitchModel() {
 		observerManager = new ObserverManagerImpl();
 	}
 	
-	public CabDirectionSwitchPosition getCurrentPosition() {
+	public TurnSwitchPosition getCurrentPosition() {
 		return currentPosition;
 	}
 	
-	public void setCurrentPosition(CabDirectionSwitchPosition currentPosition) {
+	public void setCurrentPosition(TurnSwitchPosition currentPosition) {
 		this.currentPosition = currentPosition;
 		observerManager.notifyObservers(POSITION_CHANGED, currentPosition);
 	}

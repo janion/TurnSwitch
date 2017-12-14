@@ -1,0 +1,24 @@
+.label {
+	-fx-padding: 10;
+}
+
+.label:hover {
+	-fx-background-color: gray;
+}
+
+.label:pressed {
+	-fx-background-color: darkgray;
+}
+
+.turnswitch-pointer {
+	-fx-fill: red;
+}
+
+.turnswitch-notch {
+	-fx-fill: black;
+}
+
+.turnswitch-knob {
+	-fx-fill: black;
+	-fx-stroke: red;
+}
